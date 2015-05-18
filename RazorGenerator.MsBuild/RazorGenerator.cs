@@ -8,6 +8,7 @@ using System.Text.RegularExpressions;
 using Microsoft.Build.Framework;
 using Microsoft.Build.Utilities;
 using RazorGenerator.Core;
+using System.Reflection;
 
 namespace RazorGenerator.MsBuild
 {
@@ -43,6 +44,15 @@ namespace RazorGenerator.MsBuild
             }
             catch (Exception ex)
             {
+                if (ex is System.Reflection.ReflectionTypeLoadException)
+                {
+                    var typeLoadException = ex as ReflectionTypeLoadException;
+                    foreach (var item in typeLoadException.LoaderExceptions)
+                    {
+                        Log.LogError("RazorGenerator err", item);
+                    }
+                }
+
                 Log.LogError(ex.Message);
             }
             return false;
@@ -79,7 +89,7 @@ namespace RazorGenerator.MsBuild
                     bool hasErrors = false;
                     host.Error += (o, eventArgs) =>
                     {
-                        Log.LogError("RazorGenerator", eventArgs.ErorrCode.ToString(), helpKeyword: "", file: file.ItemSpec,
+                        Log.LogError("RazorGenerator err", eventArgs.ErorrCode.ToString(), helpKeyword: "", file: file.ItemSpec,
                                      lineNumber: (int)eventArgs.LineNumber, columnNumber: (int)eventArgs.ColumnNumber,
                                      endLineNumber: (int)eventArgs.LineNumber, endColumnNumber: (int)eventArgs.ColumnNumber,
                                      message: eventArgs.ErrorMessage);
@@ -98,6 +108,9 @@ namespace RazorGenerator.MsBuild
                     }
                     catch (Exception exception)
                     {
+                        if (exception.InnerException != null)
+                            exception = exception.InnerException;
+                        Log.LogError("RazorGenerator err", exception.Message);
                         Log.LogErrorFromException(exception, showStackTrace: true, showDetail: true, file: null);
                         return false;
                     }

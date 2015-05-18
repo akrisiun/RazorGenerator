@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Samples", "Samples", "{1B1EA4C3-DE93-437E-AE87-31F1D9312435}"
 EndProject
@@ -57,11 +57,13 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebPagesSample", "samples\W
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrecompiledWebPagesLibrary", "samples\PrecompiledWebPagesLibrary\PrecompiledWebPagesLibrary.csproj", "{6F63B0CA-5614-43BB-86CE-D39F10DED1DF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorGenerator.Testing", "RazorGenerator.Testing\RazorGenerator.Testing.csproj", "{54BBBD3E-7862-4687-8A9C-39DC707012BD}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcViewsTests", "MvcViewsTests\MvcViewsTests.csproj", "{EA5115DC-E9ED-4A31-B15A-4198B93E3FC6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorGenerator.Templating", "RazorGenerator.Templating\RazorGenerator.Templating.csproj", "{B536BE55-3549-49AE-9CE6-066062B6E916}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorGenerator.MsBuild", "RazorGenerator.MsBuild\RazorGenerator.MsBuild.csproj", "{A229A158-CFD5-4D05-945D-A3192F5C895B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RazorGenerator.Core", "RazorGenerator.Core\RazorGenerator.Core.csproj", "{AF040852-112F-494D-B1D0-B50888928DB6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,16 +135,6 @@ Global
 		{6F63B0CA-5614-43BB-86CE-D39F10DED1DF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{6F63B0CA-5614-43BB-86CE-D39F10DED1DF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{6F63B0CA-5614-43BB-86CE-D39F10DED1DF}.Release|x86.ActiveCfg = Release|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{54BBBD3E-7862-4687-8A9C-39DC707012BD}.Release|x86.ActiveCfg = Release|Any CPU
 		{EA5115DC-E9ED-4A31-B15A-4198B93E3FC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{EA5115DC-E9ED-4A31-B15A-4198B93E3FC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA5115DC-E9ED-4A31-B15A-4198B93E3FC6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -163,6 +155,30 @@ Global
 		{B536BE55-3549-49AE-9CE6-066062B6E916}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{B536BE55-3549-49AE-9CE6-066062B6E916}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{B536BE55-3549-49AE-9CE6-066062B6E916}.Release|x86.ActiveCfg = Release|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Debug|x86.Build.0 = Debug|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Release|x86.ActiveCfg = Release|Any CPU
+		{A229A158-CFD5-4D05-945D-A3192F5C895B}.Release|x86.Build.0 = Release|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Debug|x86.Build.0 = Debug|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Release|x86.ActiveCfg = Release|Any CPU
+		{AF040852-112F-494D-B1D0-B50888928DB6}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
